@@ -42,10 +42,12 @@ Helpers::registerLiteModel(BeycanPress\CryptoPay\Forminator\Models\TransactionsL
 
 load_plugin_textdomain('forminator-cryptopay', false, basename(__DIR__) . '/languages');
 
-if (!defined('GF_MIN_WP_VERSION') /* TODO: check the plugin */) {
-    Helpers::requirePluginMessage('Forminator', 'https://wordpress.org/plugins/forminator/');
-} elseif (Helpers::bothExists()) {
-    new BeycanPress\CryptoPay\Forminator\Loader();
-} else {
-    Helpers::requireCryptoPayMessage('Forminator');
-}
+add_action('plugins_loaded', function (): void {
+    if (!defined('FORMINATOR_PLUGIN_BASENAME')) {
+        Helpers::requirePluginMessage('Forminator', 'https://wordpress.org/plugins/forminator/');
+    } elseif (Helpers::bothExists()) {
+        new BeycanPress\CryptoPay\Forminator\Loader();
+    } else {
+        Helpers::requireCryptoPayMessage('Forminator');
+    }
+});
