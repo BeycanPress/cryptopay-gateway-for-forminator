@@ -44,8 +44,8 @@ You can easily translate with Loco translate.
 
 == Installation ==
 
-1. Upload the entire `/forminator-cryptopay-gateway` directory to the `/wp-content/plugins/` directory.
-2. Activate Forminator - CryptoPay Gateway through the 'Plugins' menu in WordPress.
+1. Upload the entire `/cryptopay-gateway-for-forminator` directory to the `/wp-content/plugins/` directory.
+2. Activate CryptoPay Gateway for Forminator through the 'Plugins' menu in WordPress.
 3. Enjoy.
 
 == Changelog ==
